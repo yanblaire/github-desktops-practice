@@ -1,0 +1,185 @@
+:root{
+    --clr-color:red;
+}
+body{
+    height: 300vh;
+    background: rgb(75, 75, 75);
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 12vh;
+    padding: 0px 5vw;
+    z-index: 1;
+    margin: 10px;
+    margin-right: 0;
+    overflow: hidden;
+    opacity: 1;
+    transition: .5s;
+}
+header::after{
+    content: " ";
+    width: 71vw;
+    height: 11vh;
+    background-color: rgb(186, 186, 186);
+    border: 3px solid white;
+    position: absolute;
+    right: -100px;
+    z-index: -1;
+    border-radius: 50px;
+    transition: .5s;
+}
+
+.logo{
+    width: 6vw;
+}
+
+/* navigation style */
+
+nav{
+    position: relative;
+    width: 24vw;
+    height: 9vh;
+    display: flex;
+    align-items: center;
+}
+nav ul{
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+}
+nav ul li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8vw;
+    height: 9vh;
+    z-index: 1;
+}
+nav ul li a{
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+nav ul li a .text{
+    position: relative;
+    font-size: 20px;
+    transition: .25s;
+}
+nav ul li.active a .text{
+    font-size: 25px;
+    transform: translateY(10px);
+}
+nav ul li a .icon{
+    position: absolute;
+    font-size: 25px;
+    top: -15px;
+    transition: .25s;
+    transform: scale(0);
+}
+nav ul li.active a .icon{
+    transform: scale(1);
+}
+.text{
+    text-align: center;
+}
+.indicator{
+    position: absolute;
+    left: 0;
+    width: 8vw;
+    height: 9vh;
+    border-radius: 20px;
+    transition: .5s;
+}
+nav ul li:nth-child(1).active ~ .indicator{
+    background-color: red;
+    box-shadow: 0 15px 25px red;
+    transform: translateX(calc(8vw * 0));
+}
+nav ul li:nth-child(2).active ~ .indicator{
+    background: green;
+    box-shadow: 0 15px 25px green;
+    transform: translateX(calc(8vw * 1));
+}
+nav ul li:nth-child(3).active ~ .indicator{
+    background-color: blue;
+    box-shadow: 0 15px 25px blue;
+    transform: translateX(calc(8vw * 2));
+}
+
+
+/* button styles */
+
+.button{
+    position: relative;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: gray;
+    color: white;
+    font: bold;
+    text-align: center;
+    font-size: 1.3em;
+    letter-spacing: 0.1em;
+    padding: 10px 30px;
+    transition: .5s;
+    width: 150px;
+}
+.button:hover{
+    letter-spacing: .25em;
+    background: var(--clr-color);
+    box-shadow: 0 0 35px var(--clr-color);
+    color: var(--clr-color);
+}
+.button::before{
+    content: "";
+    position: absolute;
+    inset: 2px;
+    background-color: gray;
+}
+.button span{
+    position: relative;
+    z-index: 1;
+}
+
+
+
+/* navigation bar animation */
+header.sticky{
+    padding: 0 50px;
+    transition: .5s;
+    padding-left: 8vw;
+}
+/* header.sticky::before{
+    height: 0px;
+} */
+header.sticky::after{
+    right: 10px;
+    background-color: rgba(126, 126, 126, 0.445);
+    border: 3px solid red;
+    transition: .5s;
+}
+
+
+
+/* main */
+
+main{
+    position: relative;
+    background-color:rgb(29, 99, 99);
+    height: 100vh;
+    top: -14vh;
+    
+}
