@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Practice</title>
-    <link rel="icon" href="assets/logo/favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="styles.css">
-    <script src="app.js" defer></script>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Practice</title>
+  <link rel="icon" href="assets/logo/favicon.png" type="image/x-icon">
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/app.js" defer></script>
+  <script src="scripts/loadcomponent.js" defer></script>
 </head>
 <body>
-    <div data-include="components/header.html"></div>
+  <!-- Target divs where components will be injected -->
+  <div class="component-header"></div>
+
+  <main>
+    <!-- Your page content here -->
+  </main>
+
+  <div class="component-footer"></div>
+
+  <script>
+    LoadComponent("components/header.html", "component-header");
+    LoadComponent("components/footer.html", "component-footer");
+  </script>
 </body>
 </html>
